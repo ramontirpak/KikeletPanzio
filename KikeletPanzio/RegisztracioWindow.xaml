@@ -1,0 +1,39 @@
+﻿<Window x:Class="KikeletPanzio.RegisztracioWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KikeletPanzio"
+        mc:Ignorable="d"
+        Title="Regisztráció" Height="450" Width="500">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Width" Value="100"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Ügyfél regisztráció" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="Név:"/>
+                <TextBox x:Name="TbxNev" Width="150" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="Születési dátum:"/>
+                <DatePicker Name="DpSzulDatum" Width="150" SelectedDateChanged="DpSzulDatum_SelectedDateChanged"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="E-mail:"/>
+                <TextBox x:Name="TbxEmail" Width="150" />
+            </StackPanel>
+        <Button Grid.Row="4" x:Name="BtnRegisztracio" Content="Regisztráció" Width="100" Height="25" Click="BtnRegisztracio_Click"/>
+        <ListBox Grid.Row="5" x:Name="LBxUgyfelek" />
+    </Grid>
+</Window>
